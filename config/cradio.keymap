@@ -6,49 +6,46 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define HM_TAPPING_TERM 300
+#define HM_TAPPING_TERM_FAST 200
+#define HM_PRIOR_IDLE 150
+
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    timeout-ms = <20>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <0>; \
+  };
+
 / {
     behaviors {
 
     /* Left hand key positions for use with right hand mods */
     #define KEYS_L \
         /*    ┌────┬────┬────┬────┬────┐                                       */ \
-                0    1    2    3    4                                            \
-        /*    ├────┼────┼────┼────┼────┼────┐                                  */ \
-                10   11   12   13   14   15                                       \
-        /*    ├────┼────┼────┼────┼────┼────┤                                  */ \
-                22   23   24   25   26   27                                       \
-        /*    ├────┼────┼────┼────┼────┼────┤                                  */ \
-                34   35   36   37   38   39                                       \
-        /*    ├────┼────┼────┼────┼────┼────┤                                  */ \
-                46   47   48   49   50   51                                       \
-        /*    ├────┼────┼────┼────┼────┼────┘                                  */ \
-                64   65   66   67   68
+                0    1    2    3    4                                             \
+        /*    ├────┼────┼────┼────┼────┤                                       */ \
+                10   11   12   13   14                                            \
+        /*    ├────┼────┼────┼────┼────┤                                       */ \
+                20   21   22   23   24
         /*    └────┴────┴────┴────┴────┘                                       */
 
     /* Right hand key positions for use with left hand mods */
     #define KEYS_R \
         /*                                          ┌────┬────┬────┬────┬────┐ */ \
-                                                    5    6    7    8    9      \
-        /*                                     ┌────┼────┼────┼────┼────┼────┤ */ \
-                                                16   17   18   19   20   21      \
-        /*                                     ├────┼────┼────┼────┼────┼────┤ */ \
-                                                28   29   30   31   32   33      \
-        /*                                     ├────┼────┼────┼────┼────┼────┤ */ \
-                                                40   41   42   43   44   45      \
-        /*                                     ├────┼────┼────┼────┼────┼────┤ */ \
-                                                58   59   60   61   62   63      \
-        /*                                     └────┼────┼────┼────┼────┼────┤ */ \
-                                                    75   76   77   78   79
+                                                      5    6    7    8    9       \
+        /*                                          ├────┼────┼────┼────┼────┤ */ \
+                                                      15   16   17   18   19      \
+        /*                                          ├────┼────┼────┼────┼────┤ */ \
+                                                      25   26   27   28   29      \
         /*                                          └────┴────┴────┴────┴────┘ */
 
     /* Thumb key positions for use with mods on both hands */
     #define KEYS_T \
-        /*                 ┌────┬────┬────┐      ┌────┬────┬────┐              */ \
-                            52   53   54          55   56   57                   \
-        /*                 ├────┼────┼────┤      ├────┼────┼────┤              */ \
-                            69   70   71          72   73   74
-        /*                 └────┴────┴────┘      └────┴────┴────┘              */ 
-
+        /*                 ┌────┬────┐      ┌────┬────┐              */ \
+                             30   31          32   33
+        /*                 └────┴────┘      └────┴────┘              */  
 
     // Positional Homerow mods
     // Homerow mods that prevent accidental activations when rolling keys,
@@ -250,10 +247,11 @@
     combos {
         compatible = "zmk,combos";
 
-        COMBO(go_layer_3, &to 3, 30 57)
-        COMBO(go_default_layer, &to 0, 30 )
-        };
+        COMBO(go_layer_3, &to 3, 31 57)
+        //COMBO(go_default_layer, &to 0, 30 )
+        COMBO(go_magic_layer, &to 4, 31 20 )
     };
+};
 
     //╭──────┬──────┬──────┬──────┬──────╮   ╭──────┬──────┬──────┬──────┬──────╮    
     //|   0  |   1  |   2  |   3  |   4  |   |   5  |   6  |   7  |   8  |   9  |
@@ -264,6 +262,8 @@
     //╰──────┴──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┴──────┴──────╯
     //                     |  30  |  31  |   |  32  |  33  |
     //                     ╰──────┴──────╯   ╰──────┴──────╯
+
+/ {
 
     keymap {
         compatible = "zmk,keymap";
@@ -300,9 +300,9 @@
 
         layer_Mouse {
             bindings = <
-                &none           &none                   &none                   &none               &none       /*|*/       &none       &none           &noneik                     &none                   &none
-                &none           &none                   &none                   &none               &none       /*|*/       &none       &none           &noneik                     &none                   &none
-                &none           &none                   &none                   &none               &none       /*|*/       &none       &none           &noneik                     &none                   &none
+                &none           &none                   &none                   &none               &none       /*|*/       &none       &none           &none                     &none                   &none
+                &none           &none                   &none                   &none               &none       /*|*/       &none       &none           &none                     &none                   &none
+                &none           &none                   &none                   &none               &none       /*|*/       &none       &none           &none                     &none                   &none
                                                                                 &trans              &to 0       /*|*/       &trans      &trans
             >;
         };
