@@ -272,29 +272,31 @@
                 &kp Q           &layer_hold_left 2 W    &layer_hold_left 1 E    &kp R               &kp T       /*|*/       &kp Y       &kp U           &layer_hold_right 1 I       &layer_hold_right 2 O   &kp SEMI
                 &hm_l LGUI A    &hm_l LALT S            &hm_shift_l LSHIFT D    &hm_l LCTRL F       &kp G       /*|*/       &kp H       &hm_r RCTRL J   &hm_shift_r RSHIFT K        &hm_r RALT L            &hm_r RGUI P
                 &kp Z           &kp X                   &layer_hold_left 3 C    &kp V               &kp B       /*|*/       &kp N       &kp M           &layer_hold_right 3 COMMA   &kp DOT                 &kp FSLH
-                                                                                &kp BSPC      &td_layer_select1 /*|*/     &mt RSHFT RET &kp SPACE
+                                                                                &td_layer_select1   &kp BSPC    /*|*/       &kp SPACE   &mt RSHFT RET
             >;
         };
 
         // &td_layer_select1   &kp BSPC    /*|*/       &kp SPACE   &mt RSHFT RET
+        // &kp BSPC      &td_layer_select1 /*|*/     &mt RSHFT RET &kp SPACE
 
         layer_Lower {
             bindings = <
                 &kp EXCL        &kp ESC                 &kp UP                  &kp TAB             &kp GRAVE   /*|*/       &kp F5      &kp LBRC         &kp RBRC                   &caps_word              &kp SQT
                 &kp AT          &kp LEFT                &kp DOWN                &kp RIGHT           &kp AMPS    /*|*/       &kp F10     &hm_r RCTRL LPAR &hm_shift_r RSHIFT RPAR    &hm_r RALT DQT          &hm_r RGUI SQT 
                 &kp HASH        &kp DLLR                &kp PRCNT               &kp TILDE           &kp PIPE    /*|*/       &kp F11     &kp LBKT         &kp RBKT                   &kp UNDER               &kp BSLH
-                                                                                &trans              &to 0       /*|*/       &td_layer_select2 &trans      
+                                                                                &to 0               &trans      /*|*/       &trans      &td_layer_select2
             >;
         };
 
         // &to 0               &trans      /*|*/       &trans      &td_layer_select2
+        // &trans              &to 0       /*|*/       &td_layer_select2 &trans      
 
         layer_NumSymbol {
             bindings = <
                 &kp EXCL        &kp LBRC                &kp ESC                 &kp RBRC            &kp PIPE    /*|*/       &kp STAR    &kp KP_N7         &kp KP_N8                 &kp KP_N9               &kp BSLH        
                 &hm_l LGUI HASH &hm_l LALT LPAR         &hm_shift_l LSHIFT TAB  &hm_l LCTRL RPAR    &kp AMPS    /*|*/       &kp PLUS    &hm_r RCTRL KP_N4 &hm_shift_r RSHIFT KP_N5  &hm_r RALT KP_N6        &hm_r RGUI MINUS
                 &kp PRCNT       &kp LBKT                &kp GRAVE               &kp RBKT            &kp CARET   /*|*/       &kp EQUAL   &kp KP_N1         &td_2_0                   &kp KP_N3               &kp UNDER  
-                                                                                &trans              &to 0       /*|*/       &trans      &trans
+                                                                                &to 0               &trans      /*|*/       &trans      &trans
             >;
         };
 
@@ -303,7 +305,7 @@
                 &none           &none                   &none                   &none               &none       /*|*/       &none       &none           &none                     &none                   &none
                 &none           &none                   &none                   &none               &none       /*|*/       &none       &none           &none                     &none                   &none
                 &none           &none                   &none                   &none               &none       /*|*/       &none       &none           &none                     &none                   &none
-                                                                                &trans              &to 0       /*|*/       &trans      &trans
+                                                                                &to 0               &trans      /*|*/       &trans      &trans
             >;
         };
 
@@ -319,7 +321,7 @@
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
             &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &trans      &to 0         &trans     &trans
+                                               &to 0     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
