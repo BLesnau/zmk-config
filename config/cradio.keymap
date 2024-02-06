@@ -29,12 +29,12 @@
 #define HM_TAPPING_TERM_FAST 200
 #define HM_PRIOR_IDLE 150
 
-#define COMBO(NAME, BINDINGS, KEYPOS) \
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
   combo_##NAME { \
     timeout-ms = <20>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    layers = <0 1 2 3 4>; \
+    layers = <LAYERS>; \
   };
 
 / {
@@ -266,9 +266,11 @@
     combos {
         compatible = "zmk,combos";
 
-        COMBO(go_layer_3, &to 3, 31 32)
-        //COMBO(go_default_layer, &to 0, 30 )
-        COMBO(go_magic_layer, &to 4, 31 20 )
+        COMBO(go_layer_3, &to 3, 31 32, 0 1 2 4)
+        COMBO(go_default_layer1, &to 0, 31 32, 3)
+        COMBO(go_default_layer2, &to 0, 14 15, 0 1 2 3 4)
+        COMBO(go_magic_layer, &to 4, 31 20, 0 1 2 3 4)
+        COMBO(press_enter_key, &kp RET, 13 16, 0 1 2 3 4)
     };
 };
 
