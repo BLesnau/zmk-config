@@ -7,21 +7,19 @@
 #include <dt-bindings/zmk/bt.h>
 
 // ==== MOUSE-KEY <section begins> ====
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1250
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1250
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
 
 &mmv {
   acceleration-exponent = <1>;      // 1
   time-to-max-speed-ms = <1500>;    // 40
-  delay-ms = <0>;                   // 0
 };
 
 &msc {
   acceleration-exponent = <1>;      // 0
   time-to-max-speed-ms = <5000>;    // 40
-  delay-ms = <0>;                   // 10
 };
 // ==== MOUSE-KEY <section ends> =====
 
@@ -293,8 +291,8 @@
                 &kp Q           &layer_hold_left 2 W    &layer_hold_left 1 E    &kp R               &kp T       /*|*/       &kp Y       &kp U           &layer_hold_right 1 I       &layer_hold_right 2 O   &kp SEMI
                 &hm_l LGUI A    &hm_l LALT S            &hm_shift_l LSHIFT D    &hm_l LCTRL F       &kp G       /*|*/       &kp H       &hm_r RCTRL J   &hm_shift_r RSHIFT K        &hm_r RALT L            &hm_r RGUI P
                 &kp Z           &kp X                   &layer_hold_left 3 C    &kp V               &kp B       /*|*/       &kp N       &kp M           &layer_hold_right 3 COMMA   &kp DOT                 &kp FSLH
-                                                                                /*&kp LSHIFT          &kp BSPC    /*|*/       &kp SPACE   &mt RSHFT RET*/
-                                                                                &kp BSPC            &kp LSHIFT  /*|*/       &mt RSHFT RET &kp SPACE
+                                                                                //&kp LSHIFT          &kp BSPC    /*|*/       &kp SPACE   &mt RSHFT RET
+                                                                                &kp BSPC            &sk LSHIFT  /*|*/       &mt RSHFT RET &kp SPACE
             >;
         };
 
