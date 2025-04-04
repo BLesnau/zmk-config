@@ -291,8 +291,8 @@
                 &kp Q           &layer_hold_left 2 W    &layer_hold_left 1 E    &kp R               &kp T       /*|*/       &kp Y       &kp U           &layer_hold_right 1 I       &layer_hold_right 2 O   &kp SEMI
                 &hm_l LGUI A    &hm_l LALT S            &hm_shift_l LSHIFT D    &hm_l LCTRL F       &kp G       /*|*/       &kp H       &hm_r RCTRL J   &hm_shift_r RSHIFT K        &hm_r RALT L            &hm_r RGUI P
                 &kp Z           &kp X                   &layer_hold_left 3 C    &kp V               &kp B       /*|*/       &kp N       &kp M           &layer_hold_right 3 COMMA   &kp DOT                 &kp FSLH
-                                                                                //&kp LSHIFT          &kp BSPC    /*|*/       &kp SPACE   &mt RSHFT RET
-                                                                                &kp BSPC            &sk LSHIFT  /*|*/       &mt RSHFT RET &kp SPACE
+                                                                                &sk LSHIFT          &kp BSPC    /*|*/       &kp SPACE   &mt RSHFT RET
+                                                                                //&kp BSPC            &kp LSHIFT  /*|*/       &mt RSHFT RET &kp SPACE
             >;
         };
 
